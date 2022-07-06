@@ -1,5 +1,4 @@
-HardwareAccel 1
-Log notice stdout
+Log notice file /dev/null
 DNSPort 0.0.0.0:8853
 SocksPort 0.0.0.0:9150
 DataDirectory /var/lib/tor
