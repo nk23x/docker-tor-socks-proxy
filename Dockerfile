@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3
 
 LABEL maintainer="mainwhat"
 LABEL name="tor-socks-proxy"
