@@ -2,7 +2,7 @@ FROM alpine:latest
 
 LABEL maintainer="mainwhat"
 LABEL name="tor-socks-proxy"
-LABEL version="latest"
+LABEL version="0.2"
 
 RUN echo '@ltst_cm https://dl-cdn.alpinelinux.org/alpine/latest-stable/community' >> /etc/apk/repositories && \
     apk upgrade --latest --prune && \
@@ -18,8 +18,4 @@ USER tor
 EXPOSE 9050/tcp
 
 CMD ["/usr/bin/tor", "-f", "/etc/tor/torrc"]
-
-## CMD should include some init file to run
-##    umount -f /var/lib/tor && \
-##    rm -f /tmp/data 
 
