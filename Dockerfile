@@ -17,4 +17,3 @@ USER tor
 EXPOSE 9050/tcp
 
 CMD ["/usr/bin/tor", "-f", "/etc/tor/torrc"]
-
