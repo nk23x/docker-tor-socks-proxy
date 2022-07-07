@@ -6,8 +6,7 @@ LABEL version="latest"
 
 RUN echo '@ltst_cm https://dl-cdn.alpinelinux.org/alpine/latest-stable/community' >> /etc/apk/repositories && \
     apk -U upgrade && \
-    apk -v add tor@ltst_cm && \
-    rm -rf /var/cache/apk/* && \
+    apk --no-cache  --quiet add tor@ltst_cm losetup cryptsetup xfsprogs && \
     echo -e 'Log notice file /dev/null\nSOCKSPort 0.0.0.0:9050\nDataDirectory /var/lib/tor\nUser tor\n' > /etc/tor/torrc && \
     chown tor /etc/tor/torrc && \
     dd if=/dev/urandom of=/tmp/data bs=20M count=1 iflag=fullblock && \
